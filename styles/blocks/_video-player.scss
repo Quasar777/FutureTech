@@ -1,0 +1,81 @@
+@use '../helpers' as *;
+
+.video-player {
+    position: relative;
+
+    &__video {
+        width: 100%;
+        object-fit: cover;
+        height: fluid(412, 210); 
+        border-radius: rem(12);
+
+        @include laptop {
+            border-radius: rem(10);
+        }
+
+        &--small {
+            height: fluid(290, 208); 
+        }
+    }
+
+    &__panel {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        column-gap: 1rem;
+        inset: 0; // это свойство задается, чтобы растянуть элемент на всю ширину и высоту род. элемента
+        padding: rem(30);
+        transition-duration: var(--transition-duration);
+
+        // элемент будет скрываться, когда на нем нет класса is-active
+        &:not(.is-active) {
+            @include hide;
+        }
+
+        // привязываем линейный градиент
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(180deg, rgba(20, 20, 20, 0) 44.27%, #141414 100%);
+        }
+
+
+        // так мы исправили проблему: градиент перекрывал собой video-player__duration
+        * {
+            position: relative;
+        }
+
+        &--center {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__play-button {
+        --size: #{rem(70)};
+
+        @include flex-center;
+
+        @include square(var(--size));
+
+        padding: 0;
+        color: var(--color-light);
+        background-color: transparent;
+        border: none;
+
+        @include laptop {
+            --size: #{rem(50)};
+
+        }
+
+        @include hover {
+            color: var(--color-accent);
+        }
+    }
+
+    &__duration {
+        color: var(--color-grey-50);
+    }
+}
