@@ -20,7 +20,8 @@
 - **HTML5** - многостраничная структура сайта.
 - **SCSS (Sass)** - модульная стилизация и адаптивные миксины.
 - **Vanilla JavaScript (ES Modules)** - интерактивность без фреймворков.
-- **Node.js + npm** - управление зависимостями и запуск SCSS watcher.
+- **Node.js HTTP Server** - локальный запуск проекта одной командой.
+- **Node.js + npm** - управление зависимостями и скриптами проекта.
 
 ## 1. О проекте
 `futuretech` - pet-проект многостраничного адаптивного сайта на тему AI-медиа/AI-ресурсов.
@@ -124,31 +125,34 @@ futuretech/
 
 ## 7. Локальный запуск
 
-### 1) Установите зависимости
+### 1) Клонируйте репозиторий и установите зависимости
 ```bash
+git clone <repo-url>
+cd futuretech
 npm install
 ```
 
-### 2) Запустите отслеживание SCSS
+### 2) Запустите проект одной командой
 ```bash
-npm run sass-watch
+npm start
 ```
 
-Команда использует `sass --watch .` и автоматически пересобирает CSS при изменениях SCSS-файлов.
+Команда `npm start`:
+- компилирует `styles/main.scss` в `styles/main.css`;
+- запускает локальный сервер на `http://localhost:3000`.
 
-### 3) Откройте HTML-страницы
-Проект статический, поэтому можно открыть нужные файлы напрямую в браузере:
-- `index.html`
-- `news.html`
-- `podcasts.html`
-- `resources.html`
-- `blog.html`
-- `contacts.html`
+### 3) Откройте сайт в браузере
+- Главная: `http://localhost:3000/`
+- Остальные страницы:
+  - `http://localhost:3000/news.html`
+  - `http://localhost:3000/podcasts.html`
+  - `http://localhost:3000/resources.html`
+  - `http://localhost:3000/blog.html`
+  - `http://localhost:3000/contacts.html`
 
-Для корректного DX рекомендуется запускать через локальный статический сервер (например, VS Code Live Server).
 
 ## 8. Планы по улучшению
-- Добавить npm-скрипт для production-сборки CSS (`sass styles/main.scss styles/main.css --style=compressed`).
+- Добавить отдельный npm-скрипт для production-сборки CSS в minified-режиме (`--style=compressed`).
 - Внедрить линтеры (`stylelint`, `eslint`) и форматирование (`prettier`).
 - Добавить автотесты для JS-компонентов.
 - Подключить CI для проверки стилей и скриптов на pull request.

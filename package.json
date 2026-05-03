@@ -1,11 +1,14 @@
 {
   "name": "futuretech",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass-watch": "sass --watch ."
-    
+    "build:css": "sass styles/main.scss styles/main.css",
+    "watch:css": "sass --watch styles/main.scss:styles/main.css",
+    "sass-watch": "npm run watch:css",
+    "start": "npm run build:css && node server.js",
+    "dev": "npm run start",
+    "test": "echo \"No tests configured\""
   },
   "author": "",
   "license": "ISC",
