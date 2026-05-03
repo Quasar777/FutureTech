@@ -350,7 +350,7 @@ svg * {
   translate: 0 -50%;
   content: "";
   right: 0;
-  background: url("../../icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
+  background: url("../icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
   border-radius: 50%;
 }
 
@@ -489,13 +489,13 @@ button[aria-label]::before {
   }
 }
 .icon--yellow-arrow::after {
-  background-image: url("../../icons/arrow-top-right_yellow.svg");
+  background-image: url("../icons/arrow-top-right_yellow.svg");
 }
 .icon--yellow-eye::after {
-  background-image: url("../../icons/yellow-eye.svg");
+  background-image: url("../icons/yellow-eye.svg");
 }
 .icon--grey-arrow-down::after {
-  background-image: url("../../icons/grey-arrow-down.svg");
+  background-image: url("../icons/grey-arrow-down.svg");
 }
 
 .logo {
@@ -1814,10 +1814,10 @@ button[aria-label]::before {
   --size: 1.5rem;
   width: var(--size);
   height: var(--size);
-  background: url("../../icons/star_grey.svg") center/contain no-repeat;
+  background: url("../icons/star_grey.svg") center/contain no-repeat;
 }
 .rating-view__star.is-active {
-  background: url("../../icons/star_yellow.svg") center/contain no-repeat;
+  background: url("../icons/star_yellow.svg") center/contain no-repeat;
 }
 @media (width <= 90.06125rem) {
   .rating-view__star {
